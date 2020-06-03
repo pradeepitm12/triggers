@@ -14,3 +14,6 @@ else
 fi
 
 resolve_resources config/ $output_file noignore $image_prefix $tag
+
+sed -i -e 's/\(triggers.tekton.dev\/release\): "devel"/\1: "v0.5.0"/g' -e 's/\(version\): "devel"/\1: "v0.5.0"/g' $output_file
+
